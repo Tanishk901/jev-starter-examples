@@ -1,0 +1,47 @@
+[
+  {
+    "id": "T-1001",
+    "customer": "Priya (Pro plan)",
+    "text": "I was charged twice for my subscription this month. Please refund the extra charge."
+  },
+  {
+    "id": "T-1002",
+    "customer": "Acme Corp (Enterprise)",
+    "text": "Our whole team gets a 500 error when logging in since 9am. Nobody can work. This is costing us money every hour."
+  },
+  {
+    "id": "T-1003",
+    "customer": "Rahul (Free plan)",
+    "text": "How do I change the profile picture on my account?"
+  },
+  {
+    "id": "T-1004",
+    "customer": "Meera (Pro plan)",
+    "text": "My package was supposed to arrive last week and tracking hasn't updated in 6 days."
+  },
+  {
+    "id": "T-1005",
+    "customer": "Dev (Pro plan)",
+    "text": "I got an email saying my password was changed but I didn't do it. I can't log in anymore."
+  },
+  {
+    "id": "T-1006",
+    "customer": "Sam (Free plan)",
+    "text": "The export to CSV button doesn't do anything in Firefox. Works in Chrome so not a big deal."
+  },
+  {
+    "id": "T-1007",
+    "customer": "Lena (Pro plan)",
+    "text": "Hi, just wanted to say I love the new dashboard. Great work!"
+  },
+  {
+    "id": "T-1008",
+    "customer": "Arjun (Pro plan)",
+    "text": "It's not working again. Fix it."
+  },
+  {
+    "id": "T-1009",
+    "customer": "Nina (Enterprise)",
+    "text": "We were billed for 50 seats but the app only lets us add 30 users. Need this sorted before our new hires start Monday."
+  }
+]
