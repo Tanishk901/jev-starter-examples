@@ -1,0 +1,42 @@
+[
+  {
+    "from": "boss@company.com",
+    "subject": "Client deck needed before 3pm",
+    "body": "Hey, the client moved our meeting up. Can you send me the final slides by 3pm today? This is important."
+  },
+  {
+    "from": "prize-center@luckywinner.biz",
+    "subject": "CONGRATULATIONS you won an iPhone!!!",
+    "body": "You have been selected as our lucky winner. Click here and enter your card details to claim your FREE prize now."
+  },
+  {
+    "from": "mom@gmail.com",
+    "subject": "Sunday lunch",
+    "body": "Are you coming home for lunch on Sunday? Dad is making biryani. Let me know."
+  },
+  {
+    "from": "orders@shop.example.com",
+    "subject": "Your order has shipped",
+    "body": "Good news! Your headphones are on the way and should arrive Thursday. Track your package here."
+  },
+  {
+    "from": "alerts@mybank.example.com",
+    "subject": "Unusual sign-in to your account",
+    "body": "We noticed a sign-in to your bank account from a new device. If this wasn't you, please secure your account immediately."
+  },
+  {
+    "from": "newsletter@techweekly.example.com",
+    "subject": "This week in AI",
+    "body": "Our top stories this week: new models, open-source releases, and five tools worth trying."
+  },
+  {
+    "from": "teammate@company.com",
+    "subject": "Code review when you get a chance",
+    "body": "No rush, but could you look at my pull request sometime this week? Thanks!"
+  },
+  {
+    "from": "billing@electricity.example.com",
+    "subject": "Your bill is due",
+    "body": "Your electricity bill of Rs 2,340 is due on the 10th. Pay online to avoid a late fee."
+  }
+]
