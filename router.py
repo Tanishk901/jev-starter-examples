@@ -158,7 +158,8 @@ def main():
                 {"priority": prio, "ticket": ticket, "jev": answer, "review_reasons": reasons}
             )
             note = f"  <- {'; '.join(reasons)}" if reasons else ""
-            print(f"{prio}  {queue:<13} {ticket['id']}  {ticket['text'][:50]}{note}")
+            text = ticket["text"] if len(ticket["text"]) <= 50 else ticket["text"][:47] + "..."
+            print(f"{prio}  {queue:<13} {ticket['id']}  {text:<50}{note}")
     except (TypeSafeAuthenticationError, TypeSafePermissionDeniedError) as e:
         print(f"\nTypeSafe rejected the key or account (check key and credits): {e}")
         return
