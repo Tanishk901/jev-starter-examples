@@ -23,6 +23,7 @@ OUT = Path("sorted")
 
 # Thresholds are starting points. Tune them once you see real results on your messages.
 SPAM_THRESHOLD = 0.7      # be sure before hiding something in spam
+MAYBE_SPAM = 0.4          # between this and SPAM_THRESHOLD: could be phishing -> send to review
 URGENT_THRESHOLD = 0.6
 MIN_CONFIDENCE = 0.4      # below this, the category is a guess -> send to review
 
@@ -78,7 +79,8 @@ def judge_fake(message):
         "other"
     )
     return {
-        "spam": 0.95 if has("winner", "free prize", "card details") else 0.05,
+        "spam": 0.95 if has("winner", "free prize", "card details") else
+                0.5 if has("sign-in") else 0.05,
         "urgent": 0.85 if has("today", "immediately", "3pm") else 0.1,
         "category": category,
         "confidence": 0.3 if category == "other" else 0.8,
@@ -86,12 +88,15 @@ def judge_fake(message):
 
 
 def decide_folder(answer):
-    """Our rules, in plain code. Jev never decides this directly."""
+    """Our rules, in plain code. Jev never decides this directly. Returns (folder, reason)."""
     if answer["spam"] >= SPAM_THRESHOLD:
-        return "spam"
+        return "spam", ""
+    if answer["spam"] >= MAYBE_SPAM:
+        # Real security alerts and phishing look alike; a person should check before clicking.
+        return "review", f"could be phishing ({answer['spam']:.0%} spam), check before clicking"
     if answer["confidence"] < MIN_CONFIDENCE:
-        return "review"
-    return answer["category"]
+        return "review", f"unsure of category ({answer['confidence']:.0%} confident)"
+    return answer["category"], ""
 
 
 def main():
@@ -104,20 +109,22 @@ def main():
     try:
         for i, message in enumerate(messages, 1):
             answer = judge_with_jev(client, message) if use_jev else judge_fake(message)
-            folder = decide_folder(answer)
+            folder, reason = decide_folder(answer)
             urgent = answer["urgent"] >= URGENT_THRESHOLD
 
             dest = OUT / folder
             dest.mkdir(parents=True, exist_ok=True)
             name = f"{i:02d}{'_URGENT' if urgent else ''}.json"
             (dest / name).write_text(
-                json.dumps({"message": message, "jev": answer}, indent=2), encoding="utf-8"
+                json.dumps({"message": message, "jev": answer, "review_reason": reason}, indent=2),
+                encoding="utf-8",
             )
 
             flag = "!!" if urgent else "  "
+            note = f"  <- {reason}" if reason else ""
             print(
                 f"{flag} {folder:<10} spam={answer['spam']:.0%}  urgent={answer['urgent']:.0%}  "
-                f"conf={answer['confidence']:.0%}  {message['subject']}"
+                f"conf={answer['confidence']:.0%}  {message['subject']}{note}"
             )
     except (TypeSafeAuthenticationError, TypeSafePermissionDeniedError) as e:
         print(f"\nTypeSafe rejected the key or account (check key and credits): {e}")
