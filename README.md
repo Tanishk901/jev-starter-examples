@@ -1,5 +1,7 @@
 # Jev Starter Examples
 
+[![tests](https://github.com/Tanishk901/jev-starter-examples/actions/workflows/tests.yml/badge.svg)](https://github.com/Tanishk901/jev-starter-examples/actions/workflows/tests.yml)
+
 Two small Python apps built on [Jev](https://docs.typesafe.ai), TypeSafe's System One model.
 Jev returns typed judgments (probabilities) instead of text, and plain Python decides what to do with them.
 
@@ -67,6 +69,7 @@ Jev costs $0.042 per million input tokens (output is free); one run of either sc
 sorter.py, messages.json   message sorter and sample messages
 router.py, tickets.json    ticket router and sample tickets
 budget.py                  loads the key from .env, tracks spend, enforces the cap
+test_rules.py              tests for the routing rules (python -m unittest -v), run on every push
 .env.example               copy to .env and add your key (.env is git-ignored)
 docs/                      images used in this README
 ```
