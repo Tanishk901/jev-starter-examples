@@ -1,0 +1,6 @@
+.env
+spend.json
+sorted/
+queues/
+__pycache__/
+.claude/settings.local.json
