@@ -26,6 +26,7 @@ OUT = Path("queues")
 MIN_TEAM_CONFIDENCE = 0.5     # below this, the team pick is a guess -> human
 MIN_URGENCY_CONFIDENCE = 0.3  # urgency often splits between neighbouring levels; only flag a real spread
 SECURITY_THRESHOLD = 0.5      # a possible security problem always goes to a human, as P1
+MIN_DETAIL = 0.5              # below this, someone must ask the customer what is wrong first
 
 TEAMS = {
     "billing": "Charges, refunds, invoices, plans, seat counts the customer pays for",
@@ -44,7 +45,7 @@ URGENCY_LEVELS = [
     "Many users cannot work, money is being lost right now, or an account may be compromised",
 ]
 
-# Three independent questions about the same ticket -> one request, answered in parallel.
+# Four independent questions about the same ticket -> one request, answered in parallel.
 QUESTIONS = {
     "team": Choice(
         instructions="Which support team should handle `ticket`?",
@@ -58,6 +59,13 @@ QUESTIONS = {
     "security": Noul(
         instructions="Does `ticket` describe a possible security problem, such as an "
         "account takeover, unauthorized password change, or leaked data?"
+    ),
+    # A vague ticket can still look like an obvious team ("not working" -> technical),
+    # so whether it is actionable is its own question.
+    "has_detail": Noul(
+        instructions="Could a support agent start working on `ticket` without first asking "
+        "the customer what is wrong? Answer yes if the problem is described, or if the "
+        "ticket is a clear question or a compliment that needs no fix."
     ),
 }
 
@@ -73,6 +81,7 @@ def judge_with_jev(client, ticket):
         "urgency": urgency.score,
         "urgency_confidence": urgency.confidence,
         "security": r.answers["security"].noul,
+        "has_detail": r.answers["has_detail"].noul,
     }
 
 
@@ -100,6 +109,7 @@ def judge_fake(ticket):
         "urgency": urgency,
         "urgency_confidence": 0.7,
         "security": 0.9 if has("didn't do it") else 0.02,
+        "has_detail": 0.1 if len(text) < 40 else 0.95,
     }
 
 
@@ -123,6 +133,8 @@ def route(answer):
         reasons.append("not enough detail to pick a team")
     elif answer["team_confidence"] < MIN_TEAM_CONFIDENCE:
         reasons.append(f"unsure of team ({answer['team_confidence']:.0%} confident)")
+    if answer["has_detail"] < MIN_DETAIL:
+        reasons.append("too vague: ask customer for details")
     if answer["urgency_confidence"] < MIN_URGENCY_CONFIDENCE:
         reasons.append(f"unsure of urgency ({answer['urgency_confidence']:.0%} confident)")
 
