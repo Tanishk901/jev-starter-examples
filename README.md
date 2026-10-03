@@ -3,17 +3,19 @@
 Two small Python apps built on [Jev](https://docs.typesafe.ai), TypeSafe's System One model.
 Jev returns typed judgments (probabilities) instead of text, and plain Python decides what to do with them.
 
+![How it works: input, Jev judges, Python rules, sorted output or human review](docs/how-it-works.svg)
+
 | Project | What Jev judges | What the code does |
 |---|---|---|
-| [`sorter.py`](sorter.py): message sorter | Is it spam? (Noul) · Is it urgent? (Noul) · Which category? (Choice) | Files each message into `sorted/<category>/`, marks urgent ones |
-| [`router.py`](router.py): support ticket router | Which team? (Choice) · How urgent? (Score 0–3) · Security problem? (Noul) | Writes `queues/<team>.json` sorted by priority, sends unsure cases to `human_review` |
+| [`sorter.py`](sorter.py): message sorter | Spam? (Noul) · Urgent? (Noul) · Category? (Choice) | Files each message into `sorted/<category>/`, marks urgent ones, sends possible phishing to `review/` |
+| [`router.py`](router.py): support ticket router | Team? (Choice) · Urgency 0–3 (Score) · Security problem? (Noul) · Enough detail? (Noul) | Writes `queues/<team>.json` by priority, sends vague, risky or unsure tickets to `human_review` |
 
 Both scripts run **without an API key** using fake keyword-based answers, so you can try them for free.
 
 ## Quick start
 
 ```bash
-pip install typesafe-sdk
+pip install -r requirements.txt
 python sorter.py      # fake answers
 python router.py      # fake answers
 ```
@@ -26,37 +28,36 @@ cp .env.example .env  # Windows: copy .env.example .env
 python sorter.py      # first line should say "Using Jev"
 ```
 
-## Example output (real Jev)
+## Real Jev output
 
-```
-!! work       spam=5%  urgent=98%  conf=100%  Client deck needed before 3pm
-   spam       spam=99%  urgent=50%  conf=95%  CONGRATULATIONS you won an iPhone!!!
-   personal   spam=2%  urgent=17%  conf=100%  Sunday lunch
-!! finance    spam=50%  urgent=91%  conf=100%  Unusual sign-in to your account
+### Message sorter
 
-Total Jev spend so far: $0.000176 of $5.00 (8 requests, 4,198 input tokens)
-```
+![Message sorter output with real Jev](docs/sorter-output.svg)
 
-Note the bank alert at `spam=50%`: real phishing looks exactly like that, so Jev is honestly unsure.
-The 70% spam threshold keeps it in `finance/`. Thresholds live at the top of each script.
+The bank sign-in alert scores `spam=50%`: real security alerts and phishing look alike, so Jev is honestly unsure.
+Instead of guessing, the sorter sends anything between 40% and 70% spam to `review/` with the reason.
+
+### Support ticket router
+
+![Support ticket router output with real Jev](docs/router-output.svg)
+
+"It's not working again. Fix it." looks like an obvious `technical` ticket (Jev picks that team with 97% confidence),
+but nobody can act on it. A separate `has_detail` question scores it 6% (every other ticket scores 96% or more),
+so it goes to a person to ask the customer what is wrong.
 
 ## How it works
 
-```
-input JSON ──► Jev answers questions ──► your rules in Python ──► output folders/queues
-               (one request per item,     (thresholds, routing,
-                questions run in parallel)  human review)
-```
-
-- **Jev never makes the decision.** It returns numbers like `team: billing 81%` or `urgency: 2.7 / 3`;
-  `decide_folder()` and `route()` turn them into actions.
-- **Uncertainty is used, not hidden.** Low confidence or an `unclear` answer sends a ticket to a person,
-  with the reason attached.
-- **Security is asked separately**, so a possible account takeover can't be averaged away inside the urgency score.
+- **Jev never makes the decision.** It returns numbers like `team: billing 78%` or `urgency: 2.4 / 3`;
+  `decide_folder()` and `route()` turn them into actions. Thresholds live at the top of each script.
+- **All questions about an item go in one request** and are answered in parallel.
+- **Uncertainty is used, not hidden.** Low confidence, a vague ticket or a possible security problem sends the item
+  to a person, with the reason attached.
+- **Separate questions for separate risks.** Security and "enough detail?" are their own yes/no questions, so they
+  can't be averaged away inside the urgency score or hidden behind a confident team pick.
 
 ## Cost and spending cap
 
-Jev costs $0.042 per million input tokens (output is free); one run of either script is roughly $0.0002.
+Jev costs $0.042 per million input tokens (output is free); one run of either script is roughly $0.0003.
 [`budget.py`](budget.py) records every call in `spend.json` and refuses any call that could push the total past
 `LIMIT_USD` (default $5). It only counts calls made by these scripts.
 
@@ -67,6 +68,7 @@ sorter.py, messages.json   message sorter and sample messages
 router.py, tickets.json    ticket router and sample tickets
 budget.py                  loads the key from .env, tracks spend, enforces the cap
 .env.example               copy to .env and add your key (.env is git-ignored)
+docs/                      images used in this README
 ```
 
 ## License

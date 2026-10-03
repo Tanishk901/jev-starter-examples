@@ -1,0 +1,126 @@
+<svg class="rich-terminal" viewBox="0 0 1543 440.4" xmlns="http://www.w3.org/2000/svg">
+    <!-- Generated with Rich https://www.textualize.io -->
+    <style>
+
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Regular"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Regular.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Regular.woff") format("woff");
+        font-style: normal;
+        font-weight: 400;
+    }
+    @font-face {
+        font-family: "Fira Code";
+        src: local("FiraCode-Bold"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff2/FiraCode-Bold.woff2") format("woff2"),
+                url("https://cdnjs.cloudflare.com/ajax/libs/firacode/6.2.0/woff/FiraCode-Bold.woff") format("woff");
+        font-style: bold;
+        font-weight: 700;
+    }
+
+    .terminal-340033622-matrix {
+        font-family: Fira Code, monospace;
+        font-size: 20px;
+        line-height: 24.4px;
+        font-variant-east-asian: full-width;
+    }
+
+    .terminal-340033622-title {
+        font-size: 18px;
+        font-weight: bold;
+        font-family: arial;
+    }
+
+    .terminal-340033622-r1 { fill: #c4c5b5;font-weight: bold }
+.terminal-340033622-r2 { fill: #d9d9d9 }
+.terminal-340033622-r3 { fill: #98e024;font-weight: bold }
+.terminal-340033622-r4 { fill: #fd971f;font-weight: bold }
+.terminal-340033622-r5 { fill: #58d1eb;font-weight: bold }
+.terminal-340033622-r6 { fill: #625e4c }
+.terminal-340033622-r7 { fill: #f4005f;font-weight: bold }
+.terminal-340033622-r8 { fill: #58d1eb }
+.terminal-340033622-r9 { fill: #fd971f }
+    </style>
+
+    <defs>
+    <clipPath id="terminal-340033622-clip-terminal">
+      <rect x="0" y="0" width="1524.0" height="389.4" />
+    </clipPath>
+    <clipPath id="terminal-340033622-line-0">
+    <rect x="0" y="1.5" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-1">
+    <rect x="0" y="25.9" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-2">
+    <rect x="0" y="50.3" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-3">
+    <rect x="0" y="74.7" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-4">
+    <rect x="0" y="99.1" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-5">
+    <rect x="0" y="123.5" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-6">
+    <rect x="0" y="147.9" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-7">
+    <rect x="0" y="172.3" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-8">
+    <rect x="0" y="196.7" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-9">
+    <rect x="0" y="221.1" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-10">
+    <rect x="0" y="245.5" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-11">
+    <rect x="0" y="269.9" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-12">
+    <rect x="0" y="294.3" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-13">
+    <rect x="0" y="318.7" width="1525" height="24.65"/>
+            </clipPath>
+<clipPath id="terminal-340033622-line-14">
+    <rect x="0" y="343.1" width="1525" height="24.65"/>
+            </clipPath>
+    </defs>
+
+    <rect fill="#0c0c0c" stroke="rgba(255,255,255,0.35)" stroke-width="1" x="1" y="1" width="1541" height="438.4" rx="8"/><text class="terminal-340033622-title" fill="#d9d9d9" text-anchor="middle" x="770" y="27">python&#160;router.py</text>
+            <g transform="translate(26,22)">
+            <circle cx="0" cy="0" r="7" fill="#ff5f57"/>
+            <circle cx="22" cy="0" r="7" fill="#febc2e"/>
+            <circle cx="44" cy="0" r="7" fill="#28c840"/>
+            </g>
+        
+    <g transform="translate(9, 41)" clip-path="url(#terminal-340033622-clip-terminal)">
+    
+    <g class="terminal-340033622-matrix">
+    <text class="terminal-340033622-r1" x="0" y="20" textLength="219.6" clip-path="url(#terminal-340033622-line-0)">$&#160;python&#160;router.py</text><text class="terminal-340033622-r2" x="1525" y="20" textLength="12.2" clip-path="url(#terminal-340033622-line-0)">
+</text><text class="terminal-340033622-r3" x="0" y="44.4" textLength="109.8" clip-path="url(#terminal-340033622-line-1)">Using&#160;Jev</text><text class="terminal-340033622-r2" x="1525" y="44.4" textLength="12.2" clip-path="url(#terminal-340033622-line-1)">
+</text><text class="terminal-340033622-r2" x="1525" y="68.8" textLength="12.2" clip-path="url(#terminal-340033622-line-2)">
+</text><text class="terminal-340033622-r4" x="0" y="93.2" textLength="24.4" clip-path="url(#terminal-340033622-line-3)">P2</text><text class="terminal-340033622-r5" x="48.8" y="93.2" textLength="85.4" clip-path="url(#terminal-340033622-line-3)">billing</text><text class="terminal-340033622-r6" x="219.6" y="93.2" textLength="73.2" clip-path="url(#terminal-340033622-line-3)">T-1001</text><text class="terminal-340033622-r2" x="292.8" y="93.2" textLength="634.4" clip-path="url(#terminal-340033622-line-3)">&#160;&#160;I&#160;was&#160;charged&#160;twice&#160;for&#160;my&#160;subscription&#160;this&#160;mo...</text><text class="terminal-340033622-r2" x="1525" y="93.2" textLength="12.2" clip-path="url(#terminal-340033622-line-3)">
+</text><text class="terminal-340033622-r7" x="0" y="117.6" textLength="24.4" clip-path="url(#terminal-340033622-line-4)">P1</text><text class="terminal-340033622-r5" x="48.8" y="117.6" textLength="109.8" clip-path="url(#terminal-340033622-line-4)">technical</text><text class="terminal-340033622-r6" x="219.6" y="117.6" textLength="73.2" clip-path="url(#terminal-340033622-line-4)">T-1002</text><text class="terminal-340033622-r2" x="292.8" y="117.6" textLength="634.4" clip-path="url(#terminal-340033622-line-4)">&#160;&#160;Our&#160;whole&#160;team&#160;gets&#160;a&#160;500&#160;error&#160;when&#160;logging&#160;in...</text><text class="terminal-340033622-r2" x="1525" y="117.6" textLength="12.2" clip-path="url(#terminal-340033622-line-4)">
+</text><text class="terminal-340033622-r8" x="0" y="142" textLength="24.4" clip-path="url(#terminal-340033622-line-5)">P3</text><text class="terminal-340033622-r5" x="48.8" y="142" textLength="85.4" clip-path="url(#terminal-340033622-line-5)">account</text><text class="terminal-340033622-r6" x="219.6" y="142" textLength="73.2" clip-path="url(#terminal-340033622-line-5)">T-1003</text><text class="terminal-340033622-r2" x="292.8" y="142" textLength="634.4" clip-path="url(#terminal-340033622-line-5)">&#160;&#160;How&#160;do&#160;I&#160;change&#160;the&#160;profile&#160;picture&#160;on&#160;my&#160;account?</text><text class="terminal-340033622-r2" x="1525" y="142" textLength="12.2" clip-path="url(#terminal-340033622-line-5)">
+</text><text class="terminal-340033622-r4" x="0" y="166.4" textLength="24.4" clip-path="url(#terminal-340033622-line-6)">P2</text><text class="terminal-340033622-r5" x="48.8" y="166.4" textLength="97.6" clip-path="url(#terminal-340033622-line-6)">shipping</text><text class="terminal-340033622-r6" x="219.6" y="166.4" textLength="73.2" clip-path="url(#terminal-340033622-line-6)">T-1004</text><text class="terminal-340033622-r2" x="292.8" y="166.4" textLength="634.4" clip-path="url(#terminal-340033622-line-6)">&#160;&#160;My&#160;package&#160;was&#160;supposed&#160;to&#160;arrive&#160;last&#160;week&#160;and...</text><text class="terminal-340033622-r2" x="1525" y="166.4" textLength="12.2" clip-path="url(#terminal-340033622-line-6)">
+</text><text class="terminal-340033622-r7" x="0" y="190.8" textLength="24.4" clip-path="url(#terminal-340033622-line-7)">P1</text><text class="terminal-340033622-r7" x="48.8" y="190.8" textLength="146.4" clip-path="url(#terminal-340033622-line-7)">human_review</text><text class="terminal-340033622-r6" x="219.6" y="190.8" textLength="73.2" clip-path="url(#terminal-340033622-line-7)">T-1005</text><text class="terminal-340033622-r2" x="292.8" y="190.8" textLength="658.8" clip-path="url(#terminal-340033622-line-7)">&#160;&#160;I&#160;got&#160;an&#160;email&#160;saying&#160;my&#160;password&#160;was&#160;changed&#160;b...&#160;&#160;</text><text class="terminal-340033622-r9" x="951.6" y="190.8" textLength="341.6" clip-path="url(#terminal-340033622-line-7)">&lt;-&#160;possible&#160;security&#160;problem</text><text class="terminal-340033622-r2" x="1525" y="190.8" textLength="12.2" clip-path="url(#terminal-340033622-line-7)">
+</text><text class="terminal-340033622-r8" x="0" y="215.2" textLength="24.4" clip-path="url(#terminal-340033622-line-8)">P3</text><text class="terminal-340033622-r5" x="48.8" y="215.2" textLength="109.8" clip-path="url(#terminal-340033622-line-8)">technical</text><text class="terminal-340033622-r6" x="219.6" y="215.2" textLength="73.2" clip-path="url(#terminal-340033622-line-8)">T-1006</text><text class="terminal-340033622-r2" x="292.8" y="215.2" textLength="634.4" clip-path="url(#terminal-340033622-line-8)">&#160;&#160;The&#160;export&#160;to&#160;CSV&#160;button&#160;doesn&#x27;t&#160;do&#160;anything&#160;in...</text><text class="terminal-340033622-r2" x="1525" y="215.2" textLength="12.2" clip-path="url(#terminal-340033622-line-8)">
+</text><text class="terminal-340033622-r6" x="0" y="239.6" textLength="24.4" clip-path="url(#terminal-340033622-line-9)">P4</text><text class="terminal-340033622-r5" x="48.8" y="239.6" textLength="97.6" clip-path="url(#terminal-340033622-line-9)">feedback</text><text class="terminal-340033622-r6" x="219.6" y="239.6" textLength="73.2" clip-path="url(#terminal-340033622-line-9)">T-1007</text><text class="terminal-340033622-r2" x="292.8" y="239.6" textLength="634.4" clip-path="url(#terminal-340033622-line-9)">&#160;&#160;Hi,&#160;just&#160;wanted&#160;to&#160;say&#160;I&#160;love&#160;the&#160;new&#160;dashboard...</text><text class="terminal-340033622-r2" x="1525" y="239.6" textLength="12.2" clip-path="url(#terminal-340033622-line-9)">
+</text><text class="terminal-340033622-r4" x="0" y="264" textLength="24.4" clip-path="url(#terminal-340033622-line-10)">P2</text><text class="terminal-340033622-r7" x="48.8" y="264" textLength="146.4" clip-path="url(#terminal-340033622-line-10)">human_review</text><text class="terminal-340033622-r6" x="219.6" y="264" textLength="73.2" clip-path="url(#terminal-340033622-line-10)">T-1008</text><text class="terminal-340033622-r2" x="292.8" y="264" textLength="658.8" clip-path="url(#terminal-340033622-line-10)">&#160;&#160;It&#x27;s&#160;not&#160;working&#160;again.&#160;Fix&#160;it.&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;</text><text class="terminal-340033622-r9" x="951.6" y="264" textLength="463.6" clip-path="url(#terminal-340033622-line-10)">&lt;-&#160;too&#160;vague:&#160;ask&#160;customer&#160;for&#160;details</text><text class="terminal-340033622-r2" x="1525" y="264" textLength="12.2" clip-path="url(#terminal-340033622-line-10)">
+</text><text class="terminal-340033622-r4" x="0" y="288.4" textLength="24.4" clip-path="url(#terminal-340033622-line-11)">P2</text><text class="terminal-340033622-r5" x="48.8" y="288.4" textLength="85.4" clip-path="url(#terminal-340033622-line-11)">billing</text><text class="terminal-340033622-r6" x="219.6" y="288.4" textLength="73.2" clip-path="url(#terminal-340033622-line-11)">T-1009</text><text class="terminal-340033622-r2" x="292.8" y="288.4" textLength="634.4" clip-path="url(#terminal-340033622-line-11)">&#160;&#160;We&#160;were&#160;billed&#160;for&#160;50&#160;seats&#160;but&#160;the&#160;app&#160;only&#160;le...</text><text class="terminal-340033622-r2" x="1525" y="288.4" textLength="12.2" clip-path="url(#terminal-340033622-line-11)">
+</text><text class="terminal-340033622-r2" x="1525" y="312.8" textLength="12.2" clip-path="url(#terminal-340033622-line-12)">
+</text><text class="terminal-340033622-r6" x="0" y="337.2" textLength="939.4" clip-path="url(#terminal-340033622-line-13)">Total&#160;Jev&#160;spend&#160;so&#160;far:&#160;$0.001490&#160;of&#160;$5.00&#160;(60&#160;requests,&#160;35,486&#160;input&#160;tokens)</text><text class="terminal-340033622-r2" x="1525" y="337.2" textLength="12.2" clip-path="url(#terminal-340033622-line-13)">
+</text><text class="terminal-340033622-r2" x="1525" y="361.6" textLength="12.2" clip-path="url(#terminal-340033622-line-14)">
+</text><text class="terminal-340033622-r6" x="0" y="386" textLength="1390.8" clip-path="url(#terminal-340033622-line-15)">Queues&#160;written&#160;to&#160;./queues/:&#160;billing&#160;(2),&#160;technical&#160;(2),&#160;account&#160;(1),&#160;shipping&#160;(1),&#160;human_review&#160;(2),&#160;feedback&#160;(1)</text><text class="terminal-340033622-r2" x="1525" y="386" textLength="12.2" clip-path="url(#terminal-340033622-line-15)">
+</text>
+    </g>
+    </g>
+</svg>
